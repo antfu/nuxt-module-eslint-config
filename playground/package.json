@@ -1,13 +1,19 @@
 {
-  "private": true,
-  "name": "my-module-playground",
+  "name": "nuxt-module-eslint-config-playground",
   "type": "module",
+  "private": true,
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "generate": "nuxi generate"
+    "generate": "nuxi generate",
+    "lint": "eslint ."
   },
   "devDependencies": {
-    "nuxt": "latest"
+    "@antfu/eslint-config": "^2.4.3",
+    "@typescript-eslint/scope-manager": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-factory": "^0.0.1",
+    "nuxt": "latest",
+    "pathe": "^1.1.1"
   }
 }

@@ -1,5 +1,7 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  myModule: {},
-  devtools: { enabled: true }
+  eslintConfig: {
+    unimport: true,
+  },
+  devtools: { enabled: true },
 })
