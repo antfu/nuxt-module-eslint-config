@@ -47,8 +47,9 @@
     "@types/node": "^20.10.4",
     "@typescript-eslint/scope-manager": "^6.13.2",
     "bumpp": "^9.2.0",
-    "eslint": "^8.55.0",
+    "eslint": "npm:eslint-ts-patch@8.55.0-1",
     "eslint-factory": "^0.0.1",
+    "eslint-ts-patch": "8.55.0-1",
     "nuxt": "^3.8.2",
     "vitest": "^1.0.2"
   }

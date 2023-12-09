@@ -1,4 +1,7 @@
 <script setup>
+import { computed } from 'vue'
+
+const a = computed()
 </script>
 
 <template>

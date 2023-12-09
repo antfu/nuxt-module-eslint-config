@@ -11,8 +11,9 @@
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.3",
     "@typescript-eslint/scope-manager": "^6.13.2",
-    "eslint": "^8.55.0",
+    "eslint": "npm:eslint-ts-patch@8.55.0-1",
     "eslint-factory": "^0.0.1",
+    "eslint-ts-patch": "8.55.0-1",
     "nuxt": "latest",
     "pathe": "^1.1.1"
   }
