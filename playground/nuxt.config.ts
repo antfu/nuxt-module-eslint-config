@@ -1,8 +1,7 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
   eslintConfig: {
-    // unimport: true,
-    typescript: true,
+    unimport: false,
   },
   devtools: { enabled: true },
 })

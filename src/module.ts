@@ -1,3 +1,5 @@
+import { fileURLToPath } from 'node:url'
+import { join } from 'node:path'
 import { addTemplate, defineNuxtModule } from '@nuxt/kit'
 import { toImports } from 'unimport'
 import type { Import } from 'unimport'
@@ -22,6 +24,8 @@ export interface ModuleOptions {
   vue?: boolean
 }
 
+const dir = fileURLToPath(new URL('./', import.meta.url))
+
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-module-eslint-config',
@@ -29,9 +33,6 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {},
   setup(options, nuxt) {
-    if (!nuxt.options.dev)
-      return
-
     const addons: ESLintPluginData[] = []
 
     if (options.unimport)
@@ -43,6 +44,13 @@ export default defineNuxtModule<ModuleOptions>({
       async getContents() {
         const importLines: Import[] = []
         const configLines: string[] = []
+
+        importLines.push({
+          from: join(dir, '../dist/runtime/preset.mjs'),
+          name: 'createBasicNuxtConfig',
+        })
+
+        configLines.push(`...createBasicNuxtConfig(),`)
 
         for (const mod of addons) {
           importLines.push(...mod.imports)
