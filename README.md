@@ -5,10 +5,10 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-A module that generates project-aware [ESLint flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) for Nuxt.
-
 > [!IMPORTANT]
-> Work in progress
+> Experimental. Feedbacks are greatly welcome.
+
+A module that generates project-aware [ESLint flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) for Nuxt. This should replace [`@nuxt/eslint-config`](https://github.com/nuxt/eslint-config) as the flat config version.
 
 ## Quick Setup
 
