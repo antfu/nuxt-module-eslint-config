@@ -9,7 +9,7 @@ import pluginVue from 'eslint-plugin-vue'
 import pluginESLint from '@eslint/js'
 import type { Linter } from 'eslint'
 
-export function createBasicNuxtConfig(): Linter.FlatConfig[] {
+export default function setup(): Linter.FlatConfig[] {
   return [
     {
       ignores: [
@@ -18,7 +18,6 @@ export function createBasicNuxtConfig(): Linter.FlatConfig[] {
         '**/.nuxt',
         '**/.output',
         '**/.vercel',
-        '**/.netlify',
         '**/.netlify',
       ],
     },
@@ -100,32 +99,6 @@ export function createBasicNuxtConfig(): Linter.FlatConfig[] {
         // does not work with type definitions.
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': 'warn',
-      },
-    },
-    {
-      name: 'nuxt:vue-routes-disables',
-      files: [
-        // These pages are not used directly by users so they can have one-word names.
-        '**/pages/**/*.{js,ts,jsx,tsx,vue}',
-        '**/layouts/**/*.{js,ts,jsx,tsx,vue}',
-        '**/app.{js,ts,jsx,tsx,vue}',
-        '**/error.{js,ts,jsx,tsx,vue}',
-        // These files should have multiple words in their names as they are within subdirectories.
-        '**/components/*/**/*.{js,ts,jsx,tsx,vue}',
-      ],
-      rules: {
-        'vue/multi-word-component-names': 'off',
-      },
-    },
-    // Pages and layouts are required to have a single root element if transitions are enabled.
-    {
-      name: 'nuxt:vue-single-root',
-      files: [
-        '**/pages/**/*.{js,ts,jsx,tsx,vue}',
-        '**/layouts/**/*.{js,ts,jsx,tsx,vue}',
-      ],
-      rules: {
-        'vue/no-multiple-template-root': 'error',
       },
     },
   ]

@@ -4,6 +4,8 @@ import type { Nuxt } from '@nuxt/schema'
 import { defineESLintPluginAddon } from '../utils'
 
 export const Unimport = defineESLintPluginAddon((nuxt: Nuxt) => {
+  console.warn('[eslint-config] Unimport addon is not yet ready.')
+
   let dataPath = join(nuxt.options.buildDir, '.unimport.json')
   nuxt.hook('imports:context', (ctx) => {
     dataPath = addTemplate({

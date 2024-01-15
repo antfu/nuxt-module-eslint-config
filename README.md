@@ -5,6 +5,8 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
+A module that generates project-aware [ESLint flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) for Nuxt.
+
 > [!IMPORTANT]
 > Work in progress
 
@@ -22,7 +24,16 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+And create an `eslint.config.js` file in your project root, with the following content:
+
+```js
+import NuxtEslintConfig from './.nuxt/eslint.config.mjs'
+
+export default [
+  ...NuxtEslintConfig
+  // your custom flat config here.
+]
+```
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-module-eslint-config/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
