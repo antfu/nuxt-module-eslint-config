@@ -1,4 +1,4 @@
-# Nuxt Module Eslint Config
+# Nuxt Module ESLint Config
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -9,6 +9,12 @@
 > Experimental. Feedbacks are greatly welcome.
 
 A module that generates project-aware [ESLint flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new) for Nuxt. This should replace [`@nuxt/eslint-config`](https://github.com/nuxt/eslint-config) as the flat config version.
+
+## Features
+
+- [ESLint flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), future-proof
+- Project-aware Nuxt-specific settings, [supports layers](https://nuxt.com/docs/getting-started/layers).
+- [Nuxt DevTools](https://github.com/nuxt/devtools) integration powered by [`eslint-flat-config-viewer`](https://github.com/antfu/eslint-flat-config-viewer)
 
 ## Quick Setup
 
