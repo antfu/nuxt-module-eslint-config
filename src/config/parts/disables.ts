@@ -1,7 +1,7 @@
 import { GLOB_EXTS } from '../constants'
 import type { FlatConfig, NuxtESLintConfigOptions } from '../types'
 
-export default function disbales(options: { dirs?: NuxtESLintConfigOptions['dirs'] }): FlatConfig[] {
+export default function disables(options: { dirs?: NuxtESLintConfigOptions['dirs'] }): FlatConfig[] {
   const dirs = options.dirs ?? {}
 
   return [

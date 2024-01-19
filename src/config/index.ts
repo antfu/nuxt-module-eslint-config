@@ -1,6 +1,6 @@
 import type { FlatConfig, NuxtESLintConfigOptions } from './types'
 import setup from './parts/setup'
-import disbales from './parts/disables'
+import disables from './parts/disables'
 import nuxt from './parts/nuxt'
 
 export function createBasicNuxtConfig(options: NuxtESLintConfigOptions = {}): FlatConfig[] {
@@ -10,7 +10,7 @@ export function createBasicNuxtConfig(options: NuxtESLintConfigOptions = {}): Fl
     items.push(...setup())
 
   items.push(...nuxt())
-  items.push(...disbales(options))
+  items.push(...disables(options))
 
   return items
 }

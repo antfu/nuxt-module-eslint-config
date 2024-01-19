@@ -21,11 +21,11 @@ export interface ModuleOptions {
   setup?: boolean
 
   /**
-   * Enable experimental features
+   * Enable experimental features.
    */
   experimental?: {
     /**
-     * Enable unimport plugin that insert import statements automatically
+     * Enable unimport plugin that inserts import statements automatically.
      *
      * @experimental
      * @default false
