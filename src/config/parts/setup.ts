@@ -22,6 +22,13 @@ export default function setup(): Linter.FlatConfig[] {
       ],
     },
     {
+      name: 'nuxt:plugins-setup',
+      plugins: {
+        '@typescript-eslint': pluginTs as any,
+        'vue': pluginVue as any,
+      },
+    },
+    {
       name: 'nuxt:setup',
       languageOptions: {
         parserOptions: {
@@ -40,9 +47,6 @@ export default function setup(): Linter.FlatConfig[] {
       languageOptions: {
         parser: parserTs,
       },
-      plugins: {
-        '@typescript-eslint': pluginTs as any,
-      },
       rules: {
         ...pluginTs.configs['eslint-recommended'].overrides![0].rules,
         ...pluginTs.configs.recommended.rules,
@@ -53,9 +57,6 @@ export default function setup(): Linter.FlatConfig[] {
       files: [
         '**/*.vue',
       ],
-      plugins: {
-        vue: pluginVue as any,
-      },
       languageOptions: {
         parser: parserVue,
       },
