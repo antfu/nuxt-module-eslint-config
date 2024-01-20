@@ -74,8 +74,9 @@ function generateESLintConfig(options: ModuleOptions, nuxt: Nuxt, addons: ESLint
 
   const basicOptions: NuxtESLintConfigOptions = {
     features: {
-      setup: options.setup,
+      setup: !!options.setup,
     },
+    srcDir: nuxt.options.srcDir,
     dirs: getDirs(nuxt),
   }
 
@@ -159,15 +160,16 @@ function setupDevToolsIntegration(nuxt: Nuxt) {
 }
 
 function getDirs(nuxt: Nuxt): NuxtESLintConfigOptions['dirs'] {
-  const dirs = {
-    pages: [] as string[],
-    composables: [] as string[],
-    components: [] as string[],
-    layouts: [] as string[],
-    plugins: [] as string[],
-    middleware: [] as string[],
-    modules: [] as string[],
-    layers: [] as string[],
+  const dirs: Record<'pages' | 'composables' | 'components' | 'layouts' | 'plugins' | 'middleware' | 'modules' | 'layers' | 'servers', string[]> = {
+    pages: [],
+    composables: [],
+    components: [],
+    layouts: [],
+    plugins: [],
+    middleware: [],
+    modules: [],
+    layers: [],
+    servers: [],
   }
 
   for (const layer of nuxt.options._layers) {
