@@ -3,10 +3,10 @@ import setup from './parts/setup'
 import disables from './parts/disables'
 import nuxt from './parts/nuxt'
 
-export function createBasicNuxtConfig(options: NuxtESLintConfigOptions): FlatConfig[] {
+export function createBasicNuxtConfig(options: NuxtESLintConfigOptions = {}): FlatConfig[] {
   const items: FlatConfig[] = []
 
-  if (options.features.setup)
+  if (options.features?.setup)
     items.push(...setup())
 
   items.push(...nuxt())

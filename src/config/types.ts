@@ -1,7 +1,7 @@
 import type { Linter } from 'eslint'
 
 export interface NuxtESLintConfigOptions {
-  features: {
+  features?: {
     /**
      * Setup basic JavaScript, TypeScript and Vue plugins and rules.
      *
@@ -9,59 +9,59 @@ export interface NuxtESLintConfigOptions {
      *
      * @default true
      */
-    setup: boolean
+    setup?: boolean
   }
 
   /**
    * Nuxt source directory
    */
-  srcDir: string
+  srcDir?: string
 
-  dirs: {
+  dirs?: {
     /**
      * Directory for pages
      */
-    pages: string[]
+    pages?: string[]
 
     /**
      * Directory for layouts
      */
-    layouts: string[]
+    layouts?: string[]
 
     /**
      * Directory for components
      */
-    components: string[]
+    components?: string[]
 
     /**
      * Directory for composobles
      */
-    composables: string[]
+    composables?: string[]
 
     /**
      * Directory for plugins
      */
-    plugins: string[]
+    plugins?: string[]
 
     /**
      * Directory for modules
      */
-    modules: string[]
+    modules?: string[]
 
     /**
      * Directory for middleware
      */
-    middleware: string[]
+    middleware?: string[]
 
     /**
      * Directory for server
      */
-    servers: string[]
+    servers?: string[]
 
     /**
      * Directory for layers
      */
-    layers: string[]
+    layers?: string[]
   }
 }
 

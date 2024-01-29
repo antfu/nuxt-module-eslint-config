@@ -74,7 +74,7 @@ function generateESLintConfig(options: ModuleOptions, nuxt: Nuxt, addons: ESLint
 
   const basicOptions: NuxtESLintConfigOptions = {
     features: {
-      setup: !!options.setup,
+      setup: options.setup,
     },
     srcDir: nuxt.options.srcDir,
     dirs: getDirs(nuxt),
