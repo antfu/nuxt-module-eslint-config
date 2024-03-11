@@ -12,12 +12,12 @@ export interface NuxtESLintConfigOptions {
     setup?: boolean
   }
 
-  /**
-   * Nuxt source directory
-   */
-  srcDir?: string
-
   dirs?: {
+    /**
+     * Nuxt source directory
+     */
+    src?: string
+
     /**
      * Directory for pages
      */
