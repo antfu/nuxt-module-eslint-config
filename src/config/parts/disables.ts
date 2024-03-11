@@ -4,7 +4,7 @@ import type { FlatConfig, NuxtESLintConfigOptions } from '../types'
 
 export default function disables(options: NuxtESLintConfigOptions): FlatConfig[] {
   const dirs = options.dirs ?? {}
-  const nestedGlobPattern = [`**/*.${GLOB_EXTS}`] as const
+  const nestedGlobPattern = `**/*.${GLOB_EXTS}`
 
   return [
     {
@@ -14,11 +14,11 @@ export default function disables(options: NuxtESLintConfigOptions): FlatConfig[]
         relative(dirs.src || '', `error.${GLOB_EXTS}`),
 
         // Layouts and pages are not used directly by users so they can have one-word names.
-        ...(dirs.layouts?.map(layoutsDir => join(layoutsDir, ...nestedGlobPattern)) || []),
-        ...(dirs.pages?.map(pagesDir => join(pagesDir, ...nestedGlobPattern)) || []),
+        ...(dirs.layouts?.map(layoutsDir => join(layoutsDir, nestedGlobPattern)) || []),
+        ...(dirs.pages?.map(pagesDir => join(pagesDir, nestedGlobPattern)) || []),
 
         // These files should have multiple words in their names as they are within subdirectories.
-        ...(dirs.components?.map(componentsDir => join(componentsDir, ...nestedGlobPattern)) || []),
+        ...(dirs.components?.map(componentsDir => join(componentsDir, nestedGlobPattern)) || []),
       ],
       rules: {
         'vue/multi-word-component-names': 'off',
@@ -28,8 +28,8 @@ export default function disables(options: NuxtESLintConfigOptions): FlatConfig[]
     {
       name: 'nuxt:vue-single-root',
       files: [
-        ...(dirs.layouts?.map(layoutsDir => join(layoutsDir, ...nestedGlobPattern)) || []),
-        ...(dirs.pages?.map(pagesDir => join(pagesDir, ...nestedGlobPattern)) || []),
+        ...(dirs.layouts?.map(layoutsDir => join(layoutsDir, nestedGlobPattern)) || []),
+        ...(dirs.pages?.map(pagesDir => join(pagesDir, nestedGlobPattern)) || []),
       ],
       rules: {
         'vue/no-multiple-template-root': 'error',
