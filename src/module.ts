@@ -159,15 +159,17 @@ function setupDevToolsIntegration(nuxt: Nuxt) {
 }
 
 function getDirs(nuxt: Nuxt): NuxtESLintConfigOptions['dirs'] {
-  const dirs = {
-    pages: [] as string[],
-    composables: [] as string[],
-    components: [] as string[],
-    layouts: [] as string[],
-    plugins: [] as string[],
-    middleware: [] as string[],
-    modules: [] as string[],
-    layers: [] as string[],
+  const dirs: Required<NuxtESLintConfigOptions['dirs']> = {
+    pages: [],
+    composables: [],
+    components: [],
+    layouts: [],
+    plugins: [],
+    middleware: [],
+    modules: [],
+    layers: [],
+    servers: [],
+    src: nuxt.options.srcDir,
   }
 
   for (const layer of nuxt.options._layers) {

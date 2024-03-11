@@ -14,6 +14,11 @@ export interface NuxtESLintConfigOptions {
 
   dirs?: {
     /**
+     * Nuxt source directory
+     */
+    src?: string
+
+    /**
      * Directory for pages
      */
     pages?: string[]
